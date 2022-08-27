@@ -1,0 +1,6 @@
+ID_CHAT = -123456789
+APP_API_ID = 12345678
+APP_API_HASH = "09d91k6216237c89a91db4db0c4890ab"
+BOTS = [{"name": 'BOT1', "token": '1234567891:AAETZ8MESOJBb2q94ehkzF-v5WPbrfKYLEM'},
+        {"name": 'BOT2', "token": '1234567891:AAETZ8MESOJBb2q94ehkzF-v5WPbrfKYLEM'}]
+PATH_MODEL = 'ruDialoGPT-medium'

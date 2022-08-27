@@ -11,7 +11,7 @@
 ## Windows
 
 - Клонировать github проект
-	> git clone [{github project}](https://github.com/Fima20/alkash_party_v1.git)
+	> git clone https://github.com/Fima20/alkash_party_v1.git
 
 - Клонировать или установить модель [tinkoff-ai/ruDialoGPT-medium](https://huggingface.co/tinkoff-ai/ruDialoGPT-medium) 
 	> git lfs install

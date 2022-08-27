@@ -36,4 +36,4 @@
 	> pip install -r requirements.txt
 
 - Запустить
-	> python main.py"# alkash_party_v1" 
+	> python main.py 

@@ -3,17 +3,17 @@
 
 ## Preparation
 Требуется
- - телеграмм чат  и его id
+ - телеграмм id
  - ключ API Telegram от [https://my.telegram.org/apps](https://my.telegram.org/apps)
- - зарегистрировать ботов и получить их уникальный id (количество не ограничено)
+ - боты и их id (количество не ограничено)
  - (необязательно) предзагруженная модель [tinkoff-ai/ruDialoGPT-medium](https://huggingface.co/tinkoff-ai/ruDialoGPT-medium) 
 
 ## Windows
 
-- Клонировать github проект
+- Клонировать проект
 	> git clone https://github.com/Fima20/alkash_party_v1.git
 
-- Клонировать или установить модель [tinkoff-ai/ruDialoGPT-medium](https://huggingface.co/tinkoff-ai/ruDialoGPT-medium) 
+- Клонировать модель [tinkoff-ai/ruDialoGPT-medium](https://huggingface.co/tinkoff-ai/ruDialoGPT-medium) 
 	> git lfs install
 
 	> git clone https://huggingface.co/tinkoff-ai/ruDialoGPT-medium
@@ -30,12 +30,16 @@
 	
 	> PATH_MODEL = 'ruDialoGPT-medium'
 
-- Развернуть окружение и установить пакеты
+- Развернуть окружение
 	> python -m venv venv
 
 	> venv\scripts\activate
+
+- Поставить пакеты
 
 	> pip install -r requirements.txt
 
 - Запустить
 	> python main.py 
+  
+- Если чайник умнее вас, скачать репозиторий, заполнить config и запустить по очереди install.bat и start.bat (с GIT и Python)

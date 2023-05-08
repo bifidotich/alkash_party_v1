@@ -3,7 +3,7 @@ from pyrogram import filters
 from config import ID_CHAT
 
 
-class APPkash():
+class APPkash:
 
     def __init__(self,
                  api_id,
@@ -20,8 +20,14 @@ class APPkash():
         @self.app.on_message(filters.chat(ID_CHAT))
         def my_handler(client, message):
             for iter_bot in self.list_bot:
-                if message.from_user.id != (iter_bot.token.split(":"))[0]:
-                    iter_bot.post_message(str(message.text))
+                if message.from_user.id != int((iter_bot.token.split(":"))[0]):
+                    iter_bot.post_message(message)
 
     def start(self):
         self.app.run()
+
+
+
+
+
+

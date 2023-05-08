@@ -12,9 +12,9 @@ class TELEkash():
                  ai_model: AIkash,
                  token=' ',
                  bot_name="BOT",
-                 bot_memory_context_size=4,
-                 bot_sleep_time=(5, 60),
-                 bot_activity=50
+                 bot_memory_context_size=5,
+                 bot_sleep_time=(5, 40),
+                 bot_activity=0.5
                  ):
 
         self.ai_model = ai_model
@@ -34,19 +34,25 @@ class TELEkash():
 
         @self.bot.message_handler(content_types=['text'])
         def get_text_messages(message):
-            self.bot_kash.post_message(str(message.text))
+            self.bot_kash.post_message(message)
             if self.bot_kash.probability():
-                message = self.ai_model.work(text_=str(self.bot_kash.text_for_generate()))
-                self.bot.send_message(ID_CHAT, f'{message}')
+                text_for_gen, message_id = self.bot_kash.choice_input_text()
+                message = self.ai_model.work(text_=text_for_gen)
+                self.bot.send_message(ID_CHAT, f'{message}', reply_to_message_id=message_id)
 
     def poll(self):
         self.bot.polling(none_stop=True, interval=0)
 
     def live(self):
         while True:
-            time.sleep(int(self.bot_kash.get_sleep()))
-            message = self.ai_model.work(text_=str(self.bot_kash.text_for_generate()))
-            self.bot.send_message(ID_CHAT, f'{message}')
+            sleep = int(self.bot_kash.get_sleep())
+            time.sleep(sleep)
+            text_input, message_id = self.bot_kash.choice_input_text()
+            if text_input is not None:
+                if len(text_input) < 150:
+                    message = self.ai_model.work(text_=text_input)
+                    if len(message) < 150:
+                        self.bot.send_message(ID_CHAT, f'{message}', reply_to_message_id=message_id)
 
     def start(self):
 

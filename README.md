@@ -42,4 +42,4 @@
 - Запустить
 	> python main.py 
   
-- Если чайник умнее вас, скачать репозиторий, заполнить config и запустить по очереди install.bat и start.bat (с GIT и Python)
+- Если чайник умнее вас, скачать репозиторий, заполнить config и запустить по очереди install.bat и run.bat (с GIT и Python)
